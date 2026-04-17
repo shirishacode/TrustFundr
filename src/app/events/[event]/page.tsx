@@ -51,7 +51,7 @@ export default function EventPage({
 
     const transaction = {
       event: eventInfo.title,
-      amount: 100, // dummy amount
+      amount: 100,
       hash,
       timestamp: new Date().toISOString(),
     };
@@ -63,37 +63,61 @@ export default function EventPage({
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-100 via-white to-green-50 flex items-center justify-center px-4">
       
-      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-2xl w-full text-center border border-gray-100">
+      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-2xl w-full border border-gray-100">
         
-        <h1 className="text-4xl font-bold text-green-700 mb-4">
+        {/* Title */}
+        <h1 className="text-4xl font-bold text-green-700 mb-4 text-center">
           {eventInfo.title}
         </h1>
 
-        <p className="text-gray-600 text-lg mb-2">
+        {/* Date */}
+        <p className="text-gray-600 text-lg mb-2 text-center">
           <span className="font-semibold">📅 Date:</span> {eventInfo.date}
         </p>
 
+        {/* Divider */}
         <div className="w-16 h-1 bg-green-500 mx-auto my-4 rounded"></div>
 
-        <p className="text-gray-700 text-base leading-relaxed mb-6">
+        {/* Description */}
+        <p className="text-gray-700 text-base leading-relaxed mb-6 text-center">
           {eventInfo.description}
         </p>
 
-        <Button
-          onClick={handlePayment}
-          className="mt-4 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow-md"
-        >
-          Donate ₹100
-        </Button>
+        {/* Blockchain badge */}
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center mb-6">
+          <p className="text-sm text-gray-500">
+            🔗 This donation will be securely recorded on blockchain
+          </p>
+        </div>
 
+        {/* Button */}
+        <div className="flex justify-center">
+          <Button
+            onClick={handlePayment}
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow-md"
+          >
+            Donate ₹100 & Record on Blockchain
+          </Button>
+        </div>
+
+        {/* Transaction Output */}
         {txHash && (
-          <div className="mt-6 p-4 bg-green-100 rounded-lg">
-            <p className="text-green-800 font-semibold">
-              ✅ Transaction Successful!
+          <div className="mt-6 p-5 bg-green-50 border border-green-200 rounded-xl">
+            
+            <p className="text-green-800 font-semibold text-center">
+              ✅ Transaction Successfully Recorded
             </p>
-            <p className="text-xs break-all mt-2 text-gray-700">
-              Hash: {txHash}
-            </p>
+
+            {/* Hash Card */}
+            <div className="mt-4 bg-white border rounded-lg p-3">
+              <p className="text-xs text-gray-500 mb-1">
+                Blockchain Transaction Hash
+              </p>
+              <p className="font-mono text-green-700 break-all text-sm">
+                {txHash}
+              </p>
+            </div>
+
           </div>
         )}
       </div>
