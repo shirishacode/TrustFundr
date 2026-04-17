@@ -1,27 +1,30 @@
-# TrustFundr
+# TrustFundr – Transparent Donation Platform
 
-A modern donation platform built with Next.js that enables transparent and trackable contributions using simulated blockchain transactions.
+TrustFundr is a full-stack web application built using Next.js that enables transparent and accountable donation tracking.
 
-## Features
+## 🚀 Features
+- Event-based donation system
+- Real-time donation tracking
+- Simulated blockchain transaction logging
+- User authentication and dashboard
 
-- Dynamic event-based donation system
-- Blockchain-inspired transaction hash generation
-- Persistent transaction storage
-- Clean and responsive UI
-- Transaction history dashboard
+## 🔗 Blockchain Integration
+A lightweight blockchain simulation is implemented to ensure:
+- Immutable donation records
+- Unique transaction hashes
+- Transparent transaction history
 
-## Tech Stack
+Each donation generates a transaction hash stored in the system.
 
-- Next.js
+## 🛠 Tech Stack
+- Next.js (App Router)
 - React
 - Tailwind CSS
-- LocalStorage (for blockchain simulation)
+- Ethers.js (for blockchain concepts)
+- Node.js
 
-## How It Works
 
-Each donation generates a unique transaction hash, simulating a blockchain record. These transactions are stored and displayed in a history dashboard.
-
-## Run Locally
-
-npm install  
-npm run dev
+## 📌 Future Improvements
+- Real Ethereum smart contract integration
+- Wallet connection (MetaMask)
+- Smart contract deployment
